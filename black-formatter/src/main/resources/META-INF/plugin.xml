@@ -15,14 +15,20 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <projectConfigurable groupId="tools" displayName="BlackPycharm Configuration"
+                             id="preferences.BlackPycharmConfigurable" instance="BlackPycharmConfigurable"/>
+        <projectService serviceInterface="BlackPycharmConfig" serviceImplementation="BlackPycharmConfig"/>
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
         <action id="MyAction" class="MyAction" text="MyAction" description="My first action">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
+        </action>
+        <action id="BLACKReformatCode" class="ReformatCode" text="Reformat code (BLACK)"
+                description="Reformat code using BLACK">
+            <add-to-group group-id="CodeFormatGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="meta alt L"/>
         </action>
     </actions>
 </idea-plugin>

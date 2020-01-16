@@ -1,2 +1,2 @@
-# black_formatter
+# black-formatter
 PyCharm plugin for formatting with black
