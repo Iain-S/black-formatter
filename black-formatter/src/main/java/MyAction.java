@@ -1,8 +1,7 @@
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import org.jetbrains.annotations.NotNull;
 
@@ -11,6 +10,18 @@ public class MyAction extends AnAction {
     @Override
     public void update(AnActionEvent e) {
         // Using the event, evaluate the context, and enable or disable the action.
+        Presentation presentation = e.getPresentation();
+
+        int a = 1;
+        VirtualFile virtualFile = e.getData(PlatformDataKeys.VIRTUAL_FILE);
+
+        String path = virtualFile.getPath();
+
+        if (path.endsWith("a.py")) {
+            presentation.setEnabled(true);
+        } else {
+            presentation.setEnabled(false);
+        }
     }
 
     @Override

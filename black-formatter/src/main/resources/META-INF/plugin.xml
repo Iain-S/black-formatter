@@ -4,8 +4,10 @@
     <vendor>Iain</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+      Reformat Python code using <a href="https://black.readthedocs.io/en/stable/">black</a>.
+
+      Requirement:
+      + `black` must be pre-installed.
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -22,10 +24,10 @@
 
     <actions>
         <action id="MyAction" class="MyAction" text="MyAction" description="My first action">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="CodeFormatGroup" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
         </action>
-        <action id="BLACKReformatCode" class="ReformatCode" text="Reformat code (BLACK)"
+        <action id="BLACKReformatCode" class="ReformatCodeAction" text="Reformat code (BLACK)"
                 description="Reformat code using BLACK">
             <add-to-group group-id="CodeFormatGroup" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="meta alt L"/>

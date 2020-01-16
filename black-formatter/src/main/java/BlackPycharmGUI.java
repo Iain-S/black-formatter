@@ -1,4 +1,3 @@
-// Original code from https://github.com/pablogsal/black-pycharm
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.changes.ui.SelectFilePathsDialog;
 import com.intellij.uiDesigner.core.GridConstraints;
@@ -21,6 +20,8 @@ public class BlackPycharmGUI {
     private JCheckBox notShowDialogCheckBox;
     private JPanel exeNameSetting;
     private JButton pathSelectorButton;
+    private JTextField maxLineLength;
+    private JPanel maxLineLengthSetting;
     private JTextField runtimeOutputDirectoryTextField;
     private BlackPycharmConfig mConfig;
 

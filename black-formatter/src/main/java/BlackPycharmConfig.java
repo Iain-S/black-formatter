@@ -24,19 +24,38 @@ public class BlackPycharmConfig implements PersistentStateComponent<BlackPycharm
     public static final String DEFAULT_EXECUTABLE_NAME = EXECUTABLE_NAME_FILENAME;
     public String executableName = DEFAULT_EXECUTABLE_NAME;  // persistent member should be public
 
+    static final String MAX_LINE_LENGTH = "99";
+    public static final String DEFAULT_MAX_LINE_LENGTH = MAX_LINE_LENGTH;
+    public String maxLineLength = DEFAULT_MAX_LINE_LENGTH;
+
     BlackPycharmConfig() { }
 
     String getExecutableName() {
         if (executableName == null) {
             // Error, it should not happen
+            // ToDo Raise an error here, or similar
             executableName = "";
         }
         return executableName;
     }
 
+    String getMaxLineLength() {
+        if (maxLineLength == null) {
+            // Error, it should not happen
+            // ToDo Raise an error here, or similar
+            maxLineLength = "";
+        }
+        return maxLineLength;
+    }
+
     void setExecutableName(String executableName) {
         this.executableName = executableName;
     }
+
+    void setMaxLineLength(String maxLineLength) {
+        this.maxLineLength = maxLineLength;
+    }
+
 
     @Nullable
     @Override

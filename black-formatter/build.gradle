@@ -20,8 +20,13 @@ dependencies {
 intellij {
     version '2019.1.4'
 }
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
+}
+
+test {
+    systemProperty "idea.home.path", "src/test/intellij_source_code/"
 }
